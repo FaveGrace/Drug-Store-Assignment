@@ -65,10 +65,10 @@ const lowerCaseDrugs = drugs.map((drug)=>{
 console.log(lowerCaseDrugs)
 
 // 3. Write a function that accepts a category and returns all drugs under that category.
-const filteredCategory = drugs.filter((drug)=>{
-    return drug.category == "Analgesic"
-})
-console.log(filteredCategory)
+const filteredCategory = (category)=>{
+    return drugs.filter((drug) => drug.category === category)
+}
+console.log(filteredCategory("Analgesic"))
 
 // 4. Log each drug’s name and its manufacturer.
 drugs.forEach((drug)=>{
@@ -83,11 +83,9 @@ console.log(filteredPrescription)
 
 // 6. Return a new array, each item should follow the format: "Drug: [name] - [dosageMg]mg".
 const mappedNewArray = drugs.map((drug)=>{
-    return{
-        name: drug.name,
-        dosageMg: drug.dosageMg
-    }
-})
+    return `Drug: ${drug.name} - ${drug.dosageMg}mg;`
+});
+
 console.log(mappedNewArray)
 
 // 7. Write a function that returns all drugs with a stock less than 50.
